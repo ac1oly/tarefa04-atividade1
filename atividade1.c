@@ -32,8 +32,7 @@ bool timer_callback(struct repeating_timer *t)
     }
 
     state = (state + 1) % 3; // Alterna entre os estados
-    segundos = segundos + 3;
-    printf("segundo(s): %d\n", segundos);
+
     return true;
 }
 
@@ -52,7 +51,8 @@ int main()
 
     while (true)
     {
-        // Pausa de 5 segundos para reduzir o uso da CPU.
-        sleep_ms(5000);
+        sleep_ms(1000);
+        segundos++;
+        printf("%d segundo(s)\n", segundos);
     }
 }
